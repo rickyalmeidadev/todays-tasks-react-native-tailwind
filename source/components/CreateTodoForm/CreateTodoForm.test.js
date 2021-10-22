@@ -1,10 +1,10 @@
 import React from 'react'
 import {fireEvent, render} from '@testing-library/react-native'
-import CreateTodoField from './CreateTodoField'
+import CreateTodoField from './CreateTodoForm'
 
 const makeProps = props => ({
   onChangeText: jest.fn(),
-  onCreate: jest.fn(),
+  onSubmit: jest.fn(),
   value: 'foo bar',
   ...props
 })
@@ -28,5 +28,5 @@ it('should call the given callbacks on change text and on press', () => {
   fireEvent.changeText(screen.getByPlaceholderText(/write a task/i), 'foo bar')
   fireEvent.press(screen.getByRole('button'))
   expect(props.onChangeText).toHaveBeenCalled()
-  expect(props.onCreate).toHaveBeenCalled()
+  expect(props.onSubmit).toHaveBeenCalled()
 })
