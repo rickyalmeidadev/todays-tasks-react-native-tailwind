@@ -12,7 +12,7 @@ import tw from 'tailwind-react-native-classnames'
 import {CreateTodoForm, TodoCard} from './components'
 
 const App = () => {
-  const [todos, setTodos] = useState(['some'])
+  const [todos, setTodos] = useState([])
   const [input, setInput] = useState('')
 
   const handleCreateTodo = () => {
@@ -44,6 +44,9 @@ const App = () => {
             data={todos}
             keyExtractor={todo => todo}
             ItemSeparatorComponent={() => <View style={tw`h-5`} />}
+            ListEmptyComponent={() => (
+              <Text style={tw`text-gray-400`}>No tasks for now...</Text>
+            )}
             renderItem={({item: todo}) => (
               <TodoCard onPress={handleDeleteTodo}>{todo}</TodoCard>
             )}
