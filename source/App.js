@@ -1,23 +1,15 @@
 import React from 'react'
-import {StyleSheet, Text, View} from 'react-native'
+import {Text, View} from 'react-native'
 import {StatusBar} from 'expo-status-bar'
+import tw from 'tailwind-react-native-classnames'
 
 const App = () => (
   <>
     <StatusBar style="auto" />
-    <View style={styles.view}>
+    <View style={tw`flex-1 bg-white items-center justify-center`}>
       <Text>Open up App.js to start working on your app!</Text>
     </View>
   </>
 )
-
-const styles = StyleSheet.create({
-  view: {
-    flex: 1,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})
 
 export default App
