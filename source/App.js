@@ -1,7 +1,8 @@
 import React from 'react'
-import {Text, SafeAreaView, FlatList, View, TouchableOpacity} from 'react-native'
+import {Text, SafeAreaView, FlatList, View} from 'react-native'
 import {StatusBar} from 'expo-status-bar'
 import tw from 'tailwind-react-native-classnames'
+import {TodoCard} from './components'
 
 const todos = ['Like 👍', 'Comment 📢', 'Subscribe 🙃']
 
@@ -19,16 +20,6 @@ const App = () => (
       />
     </SafeAreaView>
   </>
-)
-
-const TodoCard = ({children}) => (
-  <TouchableOpacity
-    style={tw`w-full h-14 flex-row items-center p-4 bg-white rounded-lg border border-gray-100 shadow-md`}
-  >
-    <View style={tw`w-6 h-6 bg-blue-200 rounded-md`} />
-    <Text style={tw`flex-1 ml-4`}>{children}</Text>
-    <View style={tw`w-3 h-3 bg-transparent rounded-sm border-2 border-blue-400`} />
-  </TouchableOpacity>
 )
 
 export default App
