@@ -1,17 +1,21 @@
 import reducer from './reducer'
+import * as Actions from './actions'
 
 it('should return the intitial state for unhandled action types', () => {
   const action = {type: 'unhandled'}
-  expect(reducer(undefined, action)).toEqual([])
+  const actual = reducer(undefined, action)
+  const expected = []
+  expect(actual).toEqual(expected)
 })
 
 it('should handle a action to create a todo with the provided payload', () => {
   const todo = 'foo bar'
-  expect(reducer(undefined, {type: 'CREATE_TODO', payload: {todo}})).toEqual([todo])
+  const expected = [todo]
+  expect(reducer(undefined, Actions.createTodo(todo))).toEqual(expected)
 })
 
 it('should handle a action to delete a todo by its index position', () => {
-  expect(
-    reducer(['foo', 'bar', 'qux'], {type: 'DELETE_TODO', payload: {index: 1}})
-  ).toEqual(['foo', 'qux'])
+  const actual = reducer(['foo', 'bar', 'qux'], Actions.deleteTodo(1))
+  const expected = ['foo', 'qux']
+  expect(actual).toEqual(expected)
 })

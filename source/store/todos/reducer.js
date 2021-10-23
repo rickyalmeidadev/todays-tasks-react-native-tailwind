@@ -1,11 +1,13 @@
+import * as Types from './types'
+
 const INTITIAL_STATE = []
 
 const reducer = (state = INTITIAL_STATE, action) => {
   switch (action.type) {
-    case 'CREATE_TODO':
+    case Types.CREATE_TODO:
       return [...state, action.payload.todo]
 
-    case 'DELETE_TODO':
+    case Types.DELETE_TODO:
       const copy = [...state]
       copy.splice(action.payload.index, 1)
       return copy
