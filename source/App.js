@@ -1,15 +1,8 @@
 import React from 'react'
-import {
-  FlatList,
-  Keyboard,
-  SafeAreaView,
-  Text,
-  TouchableWithoutFeedback,
-  View
-} from 'react-native'
+import {Keyboard, SafeAreaView, Text, TouchableWithoutFeedback} from 'react-native'
 import {StatusBar} from 'expo-status-bar'
 import tw from 'tailwind-react-native-classnames'
-import {TodoForm, TodoCard} from './components'
+import {TodoForm, TodosList} from './components'
 import {useTodos} from './hooks'
 
 const App = () => {
@@ -23,18 +16,7 @@ const App = () => {
           <Text style={tw`ml-5 mt-10 mb-5 font-bold text-2xl`} accessibilityRole="header">
             Today's tasks
           </Text>
-          <FlatList
-            contentContainerStyle={tw`p-5`}
-            data={todos}
-            keyExtractor={todo => todo}
-            ItemSeparatorComponent={() => <View style={tw`h-5`} />}
-            ListEmptyComponent={() => (
-              <Text style={tw`text-gray-400`}>No tasks for now...</Text>
-            )}
-            renderItem={({item: todo}) => (
-              <TodoCard onPress={onDeleteTodo}>{todo}</TodoCard>
-            )}
-          />
+          <TodosList todos={todos} onDeleteTodo={onDeleteTodo} />
           <TodoForm onChangeText={onChangeText} value={input} onSubmit={onCreateTodo} />
         </SafeAreaView>
       </TouchableWithoutFeedback>
