@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "ReactNativeTailwindTodoList",
-    "slug": "ReactNativeTailwindTodoList",
+    "name": "todays-tasks-react-native-tailwind",
+    "slug": "todays-tasks-react-native-tailwind",
     "version": "1.0.0",
     "assetBundlePatterns": ["**/*"]
   },
-  "name": "ReactNativeTailwindTodoList"
+  "name": "todays-tasks-react-native-tailwind"
 }
