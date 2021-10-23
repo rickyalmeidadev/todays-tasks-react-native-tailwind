@@ -5,7 +5,7 @@ const INTITIAL_STATE = []
 const reducer = (state = INTITIAL_STATE, action) => {
   switch (action.type) {
     case Types.CREATE_TODO:
-      return [...state, action.payload.todo]
+      return [action.payload.todo, ...state]
 
     case Types.DELETE_TODO:
       const copy = [...state]

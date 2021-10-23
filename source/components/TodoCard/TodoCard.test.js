@@ -1,18 +1,30 @@
 import React from 'react'
+import {Provider} from 'react-redux'
 import {fireEvent, render} from '@testing-library/react-native'
+import store from '../../store'
+import * as Actions from '../../store/todos/actions'
 import TodoCard from './TodoCard'
 
-const makeProps = props => ({children: 'foo bar', index: 0, onPress: jest.fn(), ...props})
+const mockedDispatch = jest.fn()
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useDispatch: () => mockedDispatch
+}))
+
+const wrapper = ({children}) => <Provider store={store}>{children}</Provider>
+
+const props = {children: 'foo bar', index: 0}
+
+afterEach(jest.clearAllMocks)
 
 it('should render the todo name', () => {
-  const props = makeProps()
-  const screen = render(<TodoCard {...props} />)
+  const screen = render(<TodoCard {...props} />, {wrapper})
   expect(screen.getByText(props.children)).toBeTruthy()
 })
 
-it('should call the given callback with the todo index on press', () => {
-  const props = makeProps()
-  const screen = render(<TodoCard {...props} />)
+it('should dipatch an action to delete the todo when pressed', () => {
+  const screen = render(<TodoCard {...props} />, {wrapper})
   fireEvent.press(screen.getByText(props.children))
-  expect(props.onPress).toHaveBeenCalledWith(0)
+  expect(mockedDispatch).toHaveBeenCalledWith(Actions.deleteTodo(props.index))
 })
