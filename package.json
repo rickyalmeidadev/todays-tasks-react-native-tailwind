@@ -10,7 +10,8 @@
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watchAll",
     "test:clear": "jest --clearCache",
-    "test:coverage": "jest --coverage && open coverage/lcov-report/index.html"
+    "test:coverage": "jest --coverage && open coverage/lcov-report/index.html",
+    "prepare": "husky install"
   },
   "dependencies": {
     "expo": "~43.0.0",
@@ -35,9 +36,18 @@
     "@types/jest": "^27.0.2",
     "babel-jest": "^27.3.1",
     "eslint": "~7.14.0",
+    "husky": ">=6",
     "jest": "^27.3.1",
+    "lint-staged": ">=10",
     "prettier": "^2.4.1",
     "react-test-renderer": "^17.0.2"
   },
-  "private": true
+  "private": true,
+  "lint-staged": {
+    "**/*.js": [
+      "yarn prettier",
+      "yarn eslint",
+      "yarn test"
+    ]
+  }
 }
