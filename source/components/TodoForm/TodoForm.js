@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import tw from 'tailwind-react-native-classnames'
 
-const CreateTodoForm = ({onChangeText, onSubmit, value}) => (
+const TodoForm = ({onChangeText, onSubmit, value}) => (
   <KeyboardAvoidingView behavior={Platform.select({android: 'height', ios: 'position'})}>
     <View style={tw`flex-row justify-between items-center bg-white shadow-md`}>
       <TextInput
@@ -30,4 +30,4 @@ const CreateTodoForm = ({onChangeText, onSubmit, value}) => (
   </KeyboardAvoidingView>
 )
 
-export default CreateTodoForm
+export default TodoForm

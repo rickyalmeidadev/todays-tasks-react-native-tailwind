@@ -1,2 +1,2 @@
-export {default as CreateTodoForm} from './CreateTodoForm/CreateTodoForm'
+export {default as TodoForm} from './TodoForm/TodoForm'
 export {default as TodoCard} from './TodoCard/TodoCard'

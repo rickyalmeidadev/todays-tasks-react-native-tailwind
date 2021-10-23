@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import {StatusBar} from 'expo-status-bar'
 import tw from 'tailwind-react-native-classnames'
-import {CreateTodoForm, TodoCard} from './components'
+import {TodoForm, TodoCard} from './components'
 import {useTodos} from './hooks'
 
 const App = () => {
@@ -35,11 +35,7 @@ const App = () => {
               <TodoCard onPress={onDeleteTodo}>{todo}</TodoCard>
             )}
           />
-          <CreateTodoForm
-            onChangeText={onChangeText}
-            value={input}
-            onSubmit={onCreateTodo}
-          />
+          <TodoForm onChangeText={onChangeText} value={input} onSubmit={onCreateTodo} />
         </SafeAreaView>
       </TouchableWithoutFeedback>
     </>
