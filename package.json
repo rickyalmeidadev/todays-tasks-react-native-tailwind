@@ -26,6 +26,7 @@
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.8.0",
     "react-native-web": "0.17.1",
+    "redux": "^4.1.1",
     "tailwind-react-native-classnames": "^1.5.1"
   },
   "devDependencies": {
