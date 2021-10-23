@@ -3,10 +3,12 @@
 <p align="center">Run on your device!</p>
 
 <div align="center">
-  <img
-    src="https://user-images.githubusercontent.com/60705947/138570216-38af7276-6641-42c0-83d9-84c9ba611c59.png"
-    alt="Today's Tasks"
-  />
+  <a href="https://expo.dev/@rickyalmeida/todays-tasks" targer="_blank">
+    <img
+      src="https://user-images.githubusercontent.com/60705947/138570216-38af7276-6641-42c0-83d9-84c9ba611c59.png"
+      alt="Today's Tasks"
+    />
+  </a>
 </div>
 
 <br />
