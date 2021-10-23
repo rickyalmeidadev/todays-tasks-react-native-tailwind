@@ -1,9 +1,14 @@
 {
   "expo": {
-    "name": "todays-tasks-react-native-tailwind",
-    "slug": "todays-tasks-react-native-tailwind",
+    "name": "Todays Tasks",
+    "slug": "todays-tasks",
     "version": "1.0.0",
-    "assetBundlePatterns": ["**/*"]
+    "assetBundlePatterns": ["**/*"],
+    "description": "A task organizer app created to practice using Tailwind in React Native",
+    "githubUrl": "https://github.com/rickyalmeidadev/todays-tasks-react-native-tailwind",
+    "backgroundColor": "#e5e7eb",
+    "primaryColor": "#60a5fa"
+
   },
-  "name": "todays-tasks-react-native-tailwind"
+  "name": "Todays Tasks"
 }
