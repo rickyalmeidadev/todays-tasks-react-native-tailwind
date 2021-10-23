@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   View
 } from 'react-native'
-
 import tw from 'tailwind-react-native-classnames'
 
 const CreateTodoForm = ({onChangeText, onSubmit, value}) => (

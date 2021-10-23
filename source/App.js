@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {
   FlatList,
   Keyboard,
@@ -10,26 +10,10 @@ import {
 import {StatusBar} from 'expo-status-bar'
 import tw from 'tailwind-react-native-classnames'
 import {CreateTodoForm, TodoCard} from './components'
+import {useTodos} from './hooks'
 
 const App = () => {
-  const [todos, setTodos] = useState([])
-  const [input, setInput] = useState('')
-
-  const handleCreateTodo = () => {
-    if (!input.trim()) {
-      return
-    }
-
-    setTodos(prevState => [input, ...prevState])
-    setInput('')
-    Keyboard.dismiss()
-  }
-
-  const handleDeleteTodo = index => {
-    const copy = [...todos]
-    copy.splice(index, 1)
-    setTodos(copy)
-  }
+  const {input, onChangeText, onCreateTodo, onDeleteTodo, todos} = useTodos()
 
   return (
     <>
@@ -48,13 +32,13 @@ const App = () => {
               <Text style={tw`text-gray-400`}>No tasks for now...</Text>
             )}
             renderItem={({item: todo}) => (
-              <TodoCard onPress={handleDeleteTodo}>{todo}</TodoCard>
+              <TodoCard onPress={onDeleteTodo}>{todo}</TodoCard>
             )}
           />
           <CreateTodoForm
-            onChangeText={setInput}
+            onChangeText={onChangeText}
             value={input}
-            onSubmit={handleCreateTodo}
+            onSubmit={onCreateTodo}
           />
         </SafeAreaView>
       </TouchableWithoutFeedback>
