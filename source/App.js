@@ -1,7 +1,7 @@
 import React from 'react'
 import {Keyboard, SafeAreaView, Text, TouchableWithoutFeedback} from 'react-native'
 import {StatusBar} from 'expo-status-bar'
-import tw from 'tailwind-react-native-classnames'
+import tw from 'twrnc'
 import {TodoForm, TodosList} from './components'
 
 const App = () => (

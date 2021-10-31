@@ -1,7 +1,7 @@
 import React from 'react'
 import {FlatList, Text, View} from 'react-native'
 import {useSelector} from 'react-redux'
-import tw from 'tailwind-react-native-classnames'
+import tw from 'twrnc'
 import TodoCard from '../TodoCard/TodoCard'
 
 const TodosList = () => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Text, View, TouchableOpacity} from 'react-native'
 import {useDispatch} from 'react-redux'
-import tw from 'tailwind-react-native-classnames'
+import tw from 'twrnc'
 import * as Actions from '../../store/todos/actions'
 
 const TodoCard = ({children, index}) => {

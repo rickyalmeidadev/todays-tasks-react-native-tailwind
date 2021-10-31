@@ -9,7 +9,7 @@ import {
   View
 } from 'react-native'
 import {useDispatch} from 'react-redux'
-import tw from 'tailwind-react-native-classnames'
+import tw from 'twrnc'
 import * as Actions from '../../store/todos/actions'
 
 const TodoForm = () => {
@@ -42,7 +42,7 @@ const TodoForm = () => {
           accessibilityRole="button"
           onPress={handleSubmit}
         >
-          <Text style={tw`text-lg text-gray-400 text-xl`}>+</Text>
+          <Text style={tw`text-gray-400 text-xl`}>+</Text>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>

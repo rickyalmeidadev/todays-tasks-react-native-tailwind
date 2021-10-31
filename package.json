@@ -30,7 +30,7 @@
     "react-redux": "^7.2.5",
     "redux": "^4.1.1",
     "redux-persist": "^6.0.0",
-    "tailwind-react-native-classnames": "^1.5.1"
+    "twrnc": "^2.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
