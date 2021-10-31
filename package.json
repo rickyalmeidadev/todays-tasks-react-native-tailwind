@@ -11,7 +11,8 @@
     "test:watch": "jest --watchAll",
     "test:clear": "jest --clearCache",
     "test:coverage": "jest --coverage && open coverage/lcov-report/index.html",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate-component": "node scripts/generate-component/index.js"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "~1.15.0",
@@ -41,6 +42,7 @@
     "babel-jest": "^27.3.1",
     "eslint": "~7.14.0",
     "husky": ">=6",
+    "inquirer": "^8.2.0",
     "jest": "^27.3.1",
     "lint-staged": ">=10",
     "prettier": "^2.4.1",

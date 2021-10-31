@@ -1,0 +1,11 @@
+import React from 'react'
+import {Text, View} from 'react-native'
+import tw from 'twrcn'
+
+const COMPONENT_NAME = () => (
+  <View style={tw``}>
+    <Text>COMPONENT_NAME</Text>
+  </View>
+)
+
+export default COMPONENT_NAME

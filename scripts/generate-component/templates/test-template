@@ -1,0 +1,8 @@
+import React from 'react'
+import {render} from '@testing-library/react-native'
+import COMPONENT_NAME from './COMPONENT_NAME'
+
+it('should ...', () => {
+  const screen = render(<COMPONENT_NAME />)
+  expect(screen.getByText('COMPONENT_NAME')).toBeTruthy()
+})
